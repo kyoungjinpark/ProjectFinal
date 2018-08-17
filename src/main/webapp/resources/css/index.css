@@ -1,0 +1,54 @@
+		@charset "UTF-8";
+		html, body {
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }        
+        ::-webkit-scrollbar {
+            width: 0px;  /* remove scrollbar space */
+            background: transparent;  /* optional: just make scrollbar invisible */
+        }
+        /* optional: show position indicator in red */
+        /*::-webkit-scrollbar-thumb {
+            background: #FF0000;
+        }*/
+        nav div {
+           /*  background-color:red; */
+            /* position: absolute;
+            width: 100%; */
+        }
+        #left {
+            width: 60%;
+            height: 100vh;
+            float: left;
+        }
+        #Lframe {        	
+        	margin:10px 0;
+        	height: 20vh;
+        	text-align:center;
+        }
+        #Lframe img{
+            width: 55vw;
+            height: 15vh;            
+        }
+        
+        #right {                        
+            background-color: coral;
+            width: 40%;
+            height: 100vh;
+            float: right;
+            overflow-x: hidden;
+        }
+        #fi {
+            height: 80vh;
+            background-color: aqua;
+            
+        }
+        #se {
+            height: 80vh;
+            background-color: green;
+        }
+        #ti {
+            height: 80vh;
+            background-color: salmon;
+        }

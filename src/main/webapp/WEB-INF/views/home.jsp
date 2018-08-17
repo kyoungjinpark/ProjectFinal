@@ -2,13 +2,31 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="13;url=home2">
+	<title> opening page </title>	
+	<style>
+        body, html {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }       
+        #main img{
+            margin-top: 10vh;
+            margin-left: 10vw;
+            width: 80vw;
+            height: 80vh;
+            
+        }
+    </style>
 </head>
-<body>
-<h1>
-	Hello world!  
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-</body>
+	<body>
+        <section>
+            <div id="main">
+                <img src="resources/img/marvel10.gif">
+            </div>
+        </section>
+	</body>
 </html>
