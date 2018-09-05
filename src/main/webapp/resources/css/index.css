@@ -4,6 +4,9 @@
             height: 100%;
             overflow-x: hidden;
         }        
+        #dataList button {cursor: pointer;}
+		#dataList li:hover {background-color: yellow;}
+		#step2, #step3 {display: none;}
         ::-webkit-scrollbar {
             width: 0px;  /* remove scrollbar space */
             background: transparent;  /* optional: just make scrollbar invisible */
@@ -21,34 +24,163 @@
             width: 60%;
             height: 100vh;
             float: left;
+            overflow-x: hidden;
         }
         #Lframe {        	
-        	margin:10px 0;
+        	padding:10px 0;
         	height: 20vh;
         	text-align:center;
+        	position:fixed;
+        	background-color:white;        	
         }
         #Lframe img{
-            width: 55vw;
+            width: 60vw;
             height: 15vh;            
         }
-        
+        #middle {
+        	margin-top:20vh;
+        }
+        #middle h2{
+        	text-align:center;
+        }
+        #middle p{
+        	margin:5px 5px;
+        	padding: 10px;
+        	
+        }
+		#lhead #img{  
+		            background-image: url(img/Marvel_Studios_smalllogo.png);
+		            background-size:20vh;
+		            height: 5vh;
+		            background-repeat: repeat;
+		            animation-name: slide;
+		            animation-duration: 600s;
+		            animation-iteration-count: infinite;
+		        }
+        @-webkit-keyframes slide {
+          0% {
+            background-position: 0 0;
+          }
+          50% {
+            background-position: -5272px 0;
+          }
+          100% {
+            background-position: 0 0;
+          }
+            
+        }
+		#lbody {
+		    height: 65vh;
+		    background-size: 60vw 65vh;
+		    background-image: url(img/Sketch001.jpg);
+		}
+		#lbody p{
+		    max-height:45vh;
+		}
+		
+		#lfoot{
+		    height: 9vh;
+		    background-color: gray;
+		}
+		
+
+
+/******************************************************************************************/
+
+
         #right {                        
-            background-color: coral;
+            background-color: white;
             width: 40%;
             height: 100vh;
             float: right;
             overflow-x: hidden;
         }
+/******************************************************************************************/
         #fi {
-            height: 80vh;
-            background-color: aqua;
-            
+            height: 100vh;            
         }
+        #rbody1 {
+        	background-image: url(img/Captain_america_civil_war_cap_icon.png);
+        	height:100%;
+            background-size: 30vw 120vh;
+    		opacity: 0.4;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 85% -20%;
+    		
+        }
+/******************************************************************************************/        
         #se {
-            height: 80vh;
-            background-color: green;
+            height: 100vh;
+            
+        }                
+        #rbody2 {
+        	background-image: url(img/ant_man_by_cptcommunist-d9xiez4.png);
+        	height:100%;
+            background-size: 30vw 120vh;
+            opacity: 0.4;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 100% 50%;
+    		
         }
-        #ti {
-            height: 80vh;
-            background-color: salmon;
+        #se button{
+        	width: 25%;
+        	margin: 8px;        
         }
+/******************************************************************************************/
+        #th {
+            height: 100vh;
+        }
+        #rbody3 {
+        	background-image: url(img/deadpool.jpg);
+        	height:100%;
+            background-size: 120vw 50vh;
+            opacity: 0.4;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: -250% 50%;    		
+        }
+        
+        #history img{
+        	width: 100%;
+        }
+
+/******************************************************************************************/
+        #fo {
+            height: 100vh;
+        }
+        #rbody4 {
+        	background-image: url(img/groot.jpg);
+        	height:100%;
+            background-size: 30vw 100vh;
+            opacity: 0.4;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 100% 30%;   		
+        }
+        
+        #history img{
+        	width: 100%;
+        }
+/******************************************************************************************/
+        #fi {
+            height: 100vh;
+        }
+        #rbody5 {
+        	background-image: url(img/thanos.jpg);
+        	height:100%;
+            background-size: 30vw 100vh;
+            opacity: 0.4;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 100% 50%;   		
+        }
+        
+        #history img{
+        	width: 100%;
+        }        
+        #fiv {
+         width: 80%;
+        }
+        

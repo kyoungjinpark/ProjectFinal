@@ -67,10 +67,10 @@ public class MRController {
 		//read
 		
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("adr", "/result/20180816"+inTime);
+		//resultMap.put("adr", "/result/"+inDate+"/"+inTime);
 		
 		FileSystem fs = FileSystem.get(conf);
-		FSDataInputStream fi = fs.open(new Path("/result/20180816"+inTime+"/part-r-00000"));
+		FSDataInputStream fi = fs.open(new Path("/result/"+inDate+inTime+"/part-r-00000"));
 	    byte[] b = new byte[5000];
 		int ia = 0;
 		String result = "";
@@ -79,24 +79,22 @@ public class MRController {
 		}
 	      String[] rows = result.split("\n");
 	      List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+	      String heroname = "";
+	      //String month = "";
 	      for(int j = 0; j <rows.length; j++) {
 	         String row = rows[j];
 	         String[] cols = row.split("\t");
 	         HashMap<String, Object> map = new HashMap<String, Object>();
-	         map.put(cols[0], cols[1]);
+	         //System.out.println(cols[0]);
+	         map.put(cols[0], cols[2]);
 	         list.add(map);
-	      }				
+	         heroname = cols[1];
+	      }	      
+	      resultMap.put("name", heroname);
+	      resultMap.put("data", list);
 		
-	    /*resultMap.put("data", list);
-	    if(team == 1) {
-	    	resultMap.put("type","team1");
-	    }else if (team ==2) {
-	    	resultMap.put("type","team2");
-	    }else if (team ==3) {
-	    	resultMap.put("type","team3");
-	    }
-	    */
-		
+	    
+		//System.out.println("리절트맵"+resultMap);
 		res.setCharacterEncoding("utf-8");
 		res.setContentType("text/json;charset=utf-8");
 		JSONObject json = JSONObject.fromObject(JSONSerializer.toJSON(resultMap));

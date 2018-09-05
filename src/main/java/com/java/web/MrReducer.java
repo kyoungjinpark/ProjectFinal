@@ -14,11 +14,11 @@ public class MrReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 		
 		int sum =0;
 		for(IntWritable v : value) {
-			sum =  v.get();	
-			result.set(sum);
-			context.write(key, result);
+			sum +=  v.get();	
 		}		
+		result.set(sum);
 				
+		context.write(key, result);
 		
 		
 	}

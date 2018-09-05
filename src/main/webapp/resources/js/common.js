@@ -2,10 +2,10 @@ $(function(){
 	var cArr = [];
 	var txt;
 	var dataSource=[];
-	var type="";
+	var heroname="";
 	var chart = null;
-    var option = { chartType: 'PieChart',
-		    options: {title: 'UniqueCarrier', pieHole: 0},
+    var option = { chartType: 'LineChart',
+		    options: {hAxis: {title: 'Year/Month'}, vAxis: {title: 'Volum'}},
 		    containerId : 'chart_body'};	
 	var step1 = function(){
 		$.ajax({type:"get",url:"/web/dir"})
@@ -36,19 +36,20 @@ $(function(){
 			$(".btn1").on("click",function(){
 				var index = $(this).index();
 				var value = $(this).attr("value");
-				cArr.push($(this))
-				$(this).css("background-color","yellow")
-				console.log(cArr)
-				console.log(index)
-				console.log(value)
+				cArr.push($(this));
+				$(this).css("background-color","yellow");
+				/*console.log("씨어레이"+cArr);
+				console.log(index);
+				console.log(value);*/
 				$.ajax({url:"/web/mrCall",type:"POST",data:{"inputString":value,"team":index}})
 				.done(function(data){
-					console.log("데이터는"+data);
+					//console.log("데이터는"+data.data);
 					$("#step3").show();
-					$("#file").text(data.adr);
+					//console.log("데이터속 주소는"+data.adr);
+					$("#file").text("되나" + data.adr);
 					$(".btn2").prop("disabled",false)
 					dataSource = data.data;
-					type=data.type
+					heroname = data.name
 					barData("50%")
 				})
 			})
@@ -78,8 +79,8 @@ $(function(){
 	
 	    function drawChart() {
 			var chartData = new google.visualization.DataTable();
-			chartData.addColumn("string", "UniqueCarrier");
-			chartData.addColumn("number", type);
+			chartData.addColumn("string", 'X');
+			chartData.addColumn("number", heroname);
 			
 
 			for(var i=0;i<dataSource.length;i++){
@@ -91,6 +92,7 @@ $(function(){
 				chartData.addRows([row]);
 			}
 		
+			console.log(chartData);
 		  	option.dataTable = chartData;
 	        chart = new google.visualization.ChartWrapper(option);
 	        chart.draw();
@@ -121,8 +123,9 @@ $(function(){
 		cArr = [];
 		txt;
 		dataSource=[];
-		type="";
+		heroname="";
 		chart = null;
 		barData("0%")
 	}
 })
+

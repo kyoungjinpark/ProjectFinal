@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="13;url=home2">
+<meta http-equiv="refresh" content="13;url=index">
 	<title> opening page </title>	
 	<style>
         body, html {
@@ -25,7 +25,7 @@
 	<body>
         <section>
             <div id="main">
-                <img src="resources/img/marvel10.gif">
+                <img src="resources/css/img/marvel10.gif">
             </div>
         </section>
 	</body>

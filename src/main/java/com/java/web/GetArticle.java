@@ -16,11 +16,18 @@ import java.util.regex.Pattern;
 
 public class GetArticle { 	
 	
-	public static void main(String[] args) throws IOException {
-		String url = "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe";
+	public static List<String> main(String url, String index) throws IOException {		
 		String result = getSource(url);		
-		List<String> tag = getTagValues(result);
-		System.out.println(tag);
+		
+		if(index.equals("2")) {
+			List<String> tag = getTagValues(result);				
+			return tag;			
+			
+		}else if(index.equals("3")) {
+			List<String> tag = getNewTagValues(result);			
+			return tag;
+		}
+		return null;
 		
 		
 	}
@@ -35,31 +42,31 @@ public class GetArticle {
 		return output; 
 	} 
 	
-	private static final Pattern TAG_REGEX = Pattern.compile("(\\<p\\>[\\s\\S]+\\<\\/p\\>[\\s\\S]\\<div class\\=\\\"toclimit\\-3\\\"\\>)");
+	//private static final Pattern TAG_REGEX = Pattern.compile("\\<div class\\=\\\"mw\\-parser\\-output\\\"\\>(.+?)\\<div class\\=\\\"toclimit\\-3\\\"\\>");
 
+	private static final Pattern TAG_REGEX = Pattern.compile("\\<\\/tbody\\>\\<\\/table\\>(.+?)\\<div class\\=\\\"toclimit\\-3\\\"\\>");
 	
 	private static List<String> getTagValues(final String str) {
 	    final List<String> tagValues = new ArrayList<String>();
 	    final Matcher matcher = TAG_REGEX.matcher(str);
-	    System.out.println(str);
-	    System.out.println(matcher);
+	    while (matcher.find()) {
+	        tagValues.add(matcher.group(1).replace("/wiki", "https://en.wikipedia.org/wiki"));
+	    }
+	    return tagValues;
+	}
+	
+	private static final Pattern NTAG_REGEX = Pattern.compile("\\\"\\_endContentsText\\\" \\>(.+?)\\<div class\\=\\\"end\\_date\\\"\\>");
+	
+	private static List<String> getNewTagValues(final String str) {
+	    final List<String> tagValues = new ArrayList<String>();
+	    final Matcher matcher = NTAG_REGEX.matcher(str);
 	    while (matcher.find()) {
 	        tagValues.add(matcher.group(1));
 	    }
 	    return tagValues;
 	}
 	
-	public static ArrayList<String> getTypedFile(String text) {
-		String regex = "(\\<p\\>[\\s\\S]+\\<\\/p\\>[\\s\\S]\\<div class\\=\\\"toclimit\\-3\\\"\\>)"; 	
-		Matcher m = Pattern.compile(regex).matcher(text); 
-		System.out.println(m);
-		ArrayList<String> output = new ArrayList<>(); 
-		System.out.println(m.find());
-		while (m.find()) { 
-		output.add(m.group()); 
-		} 
-		return output; 
-	} 
+	
 
 	
 	

@@ -17,69 +17,69 @@ public class MrMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 		
 		if(MRController.inputString.equals("team1")) {			
 				if(MRController.team == 1) {
-					outputKey.set(hb.getYearMD()+"IronMan");
+					outputKey.set(hb.getYearM()+"\t"+"IronMan");
 					outputValue.set(hb.getFirstH());
 					context.write(outputKey, outputValue);				
 				}else if(MRController.team == 2) {
-					outputKey.set(hb.getYearMD()+"Hulk");
+					outputKey.set(hb.getYearM()+"\t"+"Hulk");
 					outputValue.set(hb.getSecondH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 3) {
-					outputKey.set(hb.getYearMD()+"Thor");
+					outputKey.set(hb.getYearM()+"\t"+"Thor");
 					outputValue.set(hb.getThirdH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 4) {
-					outputKey.set(hb.getYearMD()+"HawkEye");
+					outputKey.set(hb.getYearM()+"\t"+"HawkEye");
 					outputValue.set(hb.getFourthH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 5) {
-					outputKey.set(hb.getYearMD()+"BlackWidow");
+					outputKey.set(hb.getYearM()+"\t"+"BlackWidow");
 					outputValue.set(hb.getFifthH());
 					context.write(outputKey, outputValue);
 				}
 		}		
 		else if(MRController.inputString.equals("team2")) {			
 				if(MRController.team == 6) {
-					outputKey.set(hb.getYearMD()+"CaptainAmerica");
+					outputKey.set(hb.getYearM()+"\t"+"CaptainAmerica");
 					outputValue.set(hb.getFirstH());
 					context.write(outputKey, outputValue);				
 				}else if(MRController.team == 7) {
-					outputKey.set(hb.getYearMD()+"WinterSoldir");
+					outputKey.set(hb.getYearM()+"\t"+"WinterSoldier");
 					outputValue.set(hb.getSecondH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 8) {
-					outputKey.set(hb.getYearMD()+"StarLord");
+					outputKey.set(hb.getYearM()+"\t"+"StarLord");
 					outputValue.set(hb.getThirdH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 9) {
-					outputKey.set(hb.getYearMD()+"Groot");
+					outputKey.set(hb.getYearM()+"\t"+"Groot");
 					outputValue.set(hb.getFourthH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 10) {
-					outputKey.set(hb.getYearMD()+"Thanos");
+					outputKey.set(hb.getYearM()+"\t"+"Thanos");
 					outputValue.set(hb.getFifthH());
 					context.write(outputKey, outputValue);
 				}
 		}		
 		else if(MRController.inputString.equals("team3")) {			
 				if(MRController.team == 11) {
-					outputKey.set(hb.getYearMD()+"Antman");
+					outputKey.set(hb.getYearM()+"\t"+"Antman");
 					outputValue.set(hb.getFirstH());
 					context.write(outputKey, outputValue);				
 				}else if(MRController.team == 12) {
-					outputKey.set(hb.getYearMD()+"DoctorStrange");
+					outputKey.set(hb.getYearM()+"\t"+"DoctorStrange");
 					outputValue.set(hb.getSecondH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 13) {
-					outputKey.set(hb.getYearMD()+"Spiderman");
+					outputKey.set(hb.getYearM()+"\t"+"Spiderman");
 					outputValue.set(hb.getThirdH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 14) {
-					outputKey.set(hb.getYearMD()+"BlackPanther");
+					outputKey.set(hb.getYearM()+"\t"+"BlackPanther");
 					outputValue.set(hb.getFourthH());
 					context.write(outputKey, outputValue);
 				}else if(MRController.team == 15) {
-					outputKey.set(hb.getYearMD()+"DeadPool");
+					outputKey.set(hb.getYearM()+"\t"+"DeadPool");
 					outputValue.set(hb.getFifthH());
 					context.write(outputKey, outputValue);
 				}

@@ -6,6 +6,7 @@
 	<title>Welcome!</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="resources/css/common.css">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="resources/js/common.js"></script>
 </head>
 <body>
@@ -43,7 +44,7 @@
 		</div>
 		<div id="step3">
 			<!-- 버튼를 클릭 시 step2에서 생성된 파일를 step4에 PieChart로 표현하기 -->
-			<h3>분석 시작 <span id="file">/result/20180807_113200</span></h3>
+			<h3>분석 시작 <span id="file"></span></h3>
 			<button type="button" disabled="disabled" class="btn2">진행</button>
 			<hr>
 		</div>
